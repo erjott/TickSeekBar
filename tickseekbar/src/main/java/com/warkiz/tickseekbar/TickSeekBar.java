@@ -1239,7 +1239,7 @@ public class TickSeekBar extends View {
         mSeekParams.progressFloat = getProgressFloat();
         mSeekParams.fromUser = formUser;
         //for discrete series seek bar
-        if (mTicksCount > 2) {
+        if (mTicksCount > 1) {
             int rawThumbPos = getThumbPosOnTick();
             if (mTickTextsPosition != TextPosition.NONE && mTickTextsArr != null) {
                 mSeekParams.tickText = mTickTextsArr[rawThumbPos];
@@ -1337,7 +1337,7 @@ public class TickSeekBar extends View {
         float touchXTemp = touchX;
         //make sure the seek bar to seek smoothly always
         // while the tick's count is less than 3(tick's count is 1 or 2.).
-        if (mTicksCount > 2 && !mSeekSmoothly) {
+        if (mTicksCount > 1 && !mSeekSmoothly) {
             int touchBlockSize = Math.round((touchX - mPaddingLeft) / mSeekBlockLength);
             touchXTemp = mSeekBlockLength * touchBlockSize + mPaddingLeft;
         }
